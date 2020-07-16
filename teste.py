@@ -1,69 +1,43 @@
-import os
 
-num1 = int(input('digite um numero: '))
-op = str(input('digite a operação: '))
-num2 = int(input('digite outro numero: '))
+num1 = float(input('Digite um número:'))
+op = str(input('Digite a operação: '))
+num2 = float(input('Digite outro número:'))
+res = 0
 
-if op == '+':
-    resul = num1 + num2
-    print(resul)
+cont = True
 
-if op == '-':
-    resul = num1 - num2
-    print(resul)
+def calcular(num1, num2):
 
-if op == '*':
-    resul = num1 * num2
-    print(resul)
+    if op == '+':
+        return num1 + num2
+        
+    elif op == '-':
+        return num1 - num2
 
-if op == '/':
-    resul = num1 / num2
-    print(resul)
+    elif op == '/':
+        return num1 / num2
 
-if op == '**':
-    resul = num1 ** num2
-    print(resul)
+    elif op == '*':
+        return num1 * num2
 
-cont = str(input('aperte "s" para continuar a operação, ou qualquer outra coisa para sair: '))
+    elif op == '**':
+        return num1 ** num2
 
-if cont != 's':
-    print("resultado obtido: ", resul)
+res = calcular(num1, num2)
+print('O resultado é: ', res)
 
-while cont == 's':
-    op2 = str(input('digite a operação: '))
-    num3 = int(input('digite um numero: '))
+while cont :
     
-    
-    if op2 == '+':
-        resul = resul + num3
-        print(resul)
+    continuar = str(input('Deseja continuar? (s/n) '))
 
-    if op2 == '-':
-        resul = resul - num3
-        print(resul)
-
-    if op2 == '*':
-        resul = resul * num3
-        print(resul)
-
-    if op2 == '/':
-        resul = resul / num3
-        print(resul)
-
-    if op2 == '**':
-        resul = resul ** num3
-        print(resul)
-
-    
-    cont = str(input('aperte "s" para continuar a operação, ou qualquer outra coisa para parar: '))
-
-    if cont != 's':
-        print('resultado obtido:', resul)
+    if continuar != 's':
+        cont = False
+        print('O resultado final é: ', res)
         break
 
-    
-
-
-
-
-    
+    else:
+        op = str(input('Digite a operação: '))
+        num2 = int(input('Digite outro número:'))
+        res = calcular(res, num2)
+        print('Resultado é: ', res)
+        
