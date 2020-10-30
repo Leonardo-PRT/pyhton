@@ -1,14 +1,17 @@
+''' Declaração de variáveis '''
 remainer = 0
 remainer2 = 0
 remainersum = 0
 remainersum = 0
 validate = 0
 
+''' Pegando input do usuário e repetindo ate que  o usuário coloque um numero inteiro maior que 0 '''
 while True:
     number = int(input("Number: "))
     if number > 0:
         break
 
+''' Verificando a bandeira do cartão '''
 numbercheck = number
 
 while numbercheck > 100:
@@ -30,7 +33,8 @@ else:
     print("INVALID\n")
     validate = 1
 
-
+    
+''' Verificando se é um número de cartão de crédito válido '''
 numbercheck = number
 
 while numbercheck < 0:
@@ -63,6 +67,7 @@ while numbercheck < 0:
     remainer = int(remainer)
     remainersum = int(remainersum)
 
+''' Imprimindo o resuldo '''
 if validate != 1:
 
     if remainersum % 10 != 0 or number < 1000000000000 or number > 10000000000000000:
